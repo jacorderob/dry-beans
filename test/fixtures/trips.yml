@@ -19,14 +19,26 @@
 #  delivery_route_id  (delivery_route_id => delivery_routes.id)
 #
 
-one:
-  delivery_routes: one
-  scheduled_departure: 2024-04-08 17:10:08
+la_reina_1:
+  delivery_route: la_reina
+  scheduled_departure: 2024-04-08
   status: 1
-  responsible: MyString
+  responsible: "Conductor 1"
 
-two:
-  delivery_routes: two
-  scheduled_departure: 2024-04-08 17:10:08
-  status: 1
-  responsible: MyString
+la_reina_2:
+  delivery_route: la_reina
+  scheduled_departure: 2024-04-15
+  status: 0
+  responsible: "Conductor 2"
+
+chillan_1:
+  delivery_route: chillan
+  scheduled_departure: 2024-04-04
+  status: 2
+  responsible: "Conductor 3"
+
+chillan_2:
+  delivery_route: chillan
+  scheduled_departure: 2024-04-11
+  status: 0
+  responsible: "Conductor 4"

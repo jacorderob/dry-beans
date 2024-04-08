@@ -2,7 +2,7 @@ class CreateTripTasks < ActiveRecord::Migration[7.0]
   def change
     create_table :trip_tasks do |t|
       t.references :trip, null: false, foreign_key: true, index: true
-      t.string :type, null: false
+      t.string :kind, null: false
       t.string :address, null: false
       t.string :addressee_name, null: false
       t.boolean :completed, default: false

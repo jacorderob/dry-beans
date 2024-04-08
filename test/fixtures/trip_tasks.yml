@@ -8,8 +8,8 @@
 #  completed         :boolean          default(FALSE)
 #  completion_time   :datetime
 #  estimated_arrival :datetime
+#  kind              :string           not null
 #  message           :text
-#  type              :string           not null
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  trip_id           :integer          not null
@@ -23,18 +23,66 @@
 #  trip_id  (trip_id => trips.id)
 #
 
-one:
-  trip: one
-  type: 
-  adress: MyString
-  adressee_name: MyString
+delivery_la_reina_1:
+  trip: la_reina_1
+  kind: delivery
+  address: "Larraín 4451"
+  addressee_name: "Destinatario Carrasco"
+  completed: false
+  message:
+
+pickup_la_reina_1:
+  trip: la_reina_1
+  kind: pickup
+  address: "Loreley 1252"
+  addressee_name: "Entregante Soto"
+  completed: true
+  message: "Recibido en buenas condiciones"
+
+delivery_la_reina_2:
+  trip: la_reina_2
+  kind: delivery
+  address: "Larraín 4451"
+  addressee_name: "Destinatario Carrasco"
   completed: false
   message: MyText
 
-two:
-  trip: two
-  type: 
-  adress: MyString
-  adressee_name: MyString
+pickup_la_reina_2:
+  trip: la_reina_2
+  kind: pickup
+  address: "Loreley 1252"
+  addressee_name: "Entregante Soto"
   completed: false
   message: MyText
+
+delivery_chillan_1:
+  trip: chillan_1
+  kind: delivery
+  address: "Flores Millán 3312"
+  addressee_name: "Destinatario Carrasco"
+  completed: true
+  message: "Entregado conforme"
+
+pickup_chillan_1:
+  trip: chillan_1
+  kind: pickup
+  address: "Collín 314"
+  addressee_name: "Entregante Soto"
+  completed: false
+  message: "No se encontró a la persona, se debe reintentar"
+
+delivery_chillan_2:
+  trip: chillan_2
+  kind: delivery
+  address: "Flores Millán 3312"
+  addressee_name: "Destinatario Carrasco"
+  completed: false
+  message: "Entregado conforme"
+
+pickup_chillan_2:
+  trip: chillan_2
+  kind: pickup
+  address: "Collín 314"
+  addressee_name: "Entregante Soto"
+  completed: false
+  message: "No se encontró a la persona, se debe reintentar"

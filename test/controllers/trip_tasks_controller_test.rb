@@ -12,7 +12,7 @@ class TripTasksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create trip_task" do
     assert_difference("TripTask.count") do
-      post trip_tasks_url, params: { trip_task: { adress: @trip_task.adress, adressee_name: @trip_task.adressee_name, completed: @trip_task.completed, message: @trip_task.message, trip_id: @trip_task.trip_id, type: @trip_task.type } }, as: :json
+      post trip_tasks_url, params: { trip_task: { adress: @trip_task.adress, adressee_name: @trip_task.adressee_name, completed: @trip_task.completed, message: @trip_task.message, trip_id: @trip_task.trip_id, kind: @trip_task.kind } }, as: :json
     end
 
     assert_response :created
@@ -24,7 +24,7 @@ class TripTasksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update trip_task" do
-    patch trip_task_url(@trip_task), params: { trip_task: { adress: @trip_task.adress, adressee_name: @trip_task.adressee_name, completed: @trip_task.completed, message: @trip_task.message, trip_id: @trip_task.trip_id, type: @trip_task.type } }, as: :json
+    patch trip_task_url(@trip_task), params: { trip_task: { adress: @trip_task.adress, adressee_name: @trip_task.adressee_name, completed: @trip_task.completed, message: @trip_task.message, trip_id: @trip_task.trip_id, kind: @trip_task.kind } }, as: :json
     assert_response :success
   end
 

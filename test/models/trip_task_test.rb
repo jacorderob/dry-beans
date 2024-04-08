@@ -8,8 +8,8 @@
 #  completed         :boolean          default(FALSE)
 #  completion_time   :datetime
 #  estimated_arrival :datetime
+#  kind              :string           not null
 #  message           :text
-#  type              :string           not null
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  trip_id           :integer          not null

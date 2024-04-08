@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_08_212903) do
 
   create_table "trip_tasks", force: :cascade do |t|
     t.integer "trip_id", null: false
-    t.string "type", null: false
+    t.string "kind", null: false
     t.string "address", null: false
     t.string "addressee_name", null: false
     t.boolean "completed", default: false
