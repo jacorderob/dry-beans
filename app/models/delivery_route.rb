@@ -10,6 +10,8 @@
 #  updated_at  :datetime         not null
 #
 class DeliveryRoute < ApplicationRecord
+  has_many :trips, dependent: :destroy
+
   validates :name, :distance, presence: true
   validates :distance, comparison: { greater_than: 0 }
 end

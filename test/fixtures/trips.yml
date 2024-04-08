@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: trips
+#
+#  id                  :integer          not null, primary key
+#  responsible         :string           not null
+#  scheduled_departure :datetime         not null
+#  status              :integer          default("scheduled")
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  delivery_route_id   :integer          not null
+#
+# Indexes
+#
+#  index_trips_on_delivery_route_id  (delivery_route_id)
+#
+# Foreign Keys
+#
+#  delivery_route_id  (delivery_route_id => delivery_routes.id)
+#
+
+one:
+  delivery_routes: one
+  scheduled_departure: 2024-04-08 17:10:08
+  status: 1
+  responsible: MyString
+
+two:
+  delivery_routes: two
+  scheduled_departure: 2024-04-08 17:10:08
+  status: 1
+  responsible: MyString
