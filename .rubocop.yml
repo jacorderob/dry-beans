@@ -1,0 +1,10 @@
+AllCops:
+  Exclude:
+    - "bin/**"
+
+Metrics/BlockLength:
+  Exclude:
+    - "lib/tasks/auto_annotate_models.rake"
+
+Style/Documentation:
+  Enabled: false
