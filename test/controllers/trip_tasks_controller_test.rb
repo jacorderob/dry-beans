@@ -2,37 +2,55 @@ require "test_helper"
 
 class TripTasksControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @trip_task = trip_tasks(:one)
-  end
-
-  test "should get index" do
-    get trip_tasks_url, as: :json
-    assert_response :success
+    @trip_task = trip_tasks(:pickup_la_reina_1)
   end
 
   test "should create trip_task" do
     assert_difference("TripTask.count") do
-      post trip_tasks_url, params: { trip_task: { adress: @trip_task.adress, adressee_name: @trip_task.adressee_name, completed: @trip_task.completed, message: @trip_task.message, trip_id: @trip_task.trip_id, kind: @trip_task.kind } }, as: :json
+      post trip_tasks_url, params: {
+        trip_task: {
+          trip_id: @trip_task.trip_id,
+          address: @trip_task.address,
+          kind: @trip_task.kind,
+          addressee_name: @trip_task.addressee_name
+        }
+      }, as: :json
     end
 
     assert_response :created
+    assert_equal response.location, delivery_route_url(@trip_task.trip.delivery_route)
+    
+    created_task = TripTask.last
+    assert_equal @trip_task.address, created_task.address 
+    assert_equal @trip_task.addressee_name, created_task.addressee_name
+    assert_equal @trip_task.kind, created_task.kind
+    assert_not created_task.completed
+    assert_nil created_task.message
   end
 
-  test "should show trip_task" do
-    get trip_task_url(@trip_task), as: :json
-    assert_response :success
+  test "should fail when invalid params" do
+    post trip_tasks_url, params: {
+      trip_task: {
+        trip_id: @trip_task.trip_id,
+        address: @trip_task.address,
+        kind: 'invalid kind',
+        addressee_name: @trip_task.addressee_name
+      }
+    }, as: :json
+
+    assert_response :unprocessable_entity
   end
 
-  test "should update trip_task" do
-    patch trip_task_url(@trip_task), params: { trip_task: { adress: @trip_task.adress, adressee_name: @trip_task.adressee_name, completed: @trip_task.completed, message: @trip_task.message, trip_id: @trip_task.trip_id, kind: @trip_task.kind } }, as: :json
-    assert_response :success
-  end
-
-  test "should destroy trip_task" do
-    assert_difference("TripTask.count", -1) do
-      delete trip_task_url(@trip_task), as: :json
+  test "shoud raise error when missing params" do
+    assert_raise ActionController::ParameterMissing do
+      post trip_tasks_url, params: {
+        another_model: {
+          trip_id: @trip_task.trip_id,
+          address: @trip_task.address,
+          kind: 'invalid kind',
+          addressee_name: @trip_task.addressee_name
+        }
+      }, as: :json
     end
-
-    assert_response :no_content
   end
 end

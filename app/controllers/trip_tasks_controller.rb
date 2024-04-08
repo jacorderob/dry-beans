@@ -14,6 +14,9 @@ class TripTasksController < ApplicationController
   private
     # Only allow a list of trusted parameters through.
     def trip_task_params
-      params.require(:trip_task).permit(:trip_id, :kind, :address, :addressee_name, :completed, :message)
+      params.require(:trip_task).permit(
+        :trip_id, :kind, :address, :addressee_name,
+        :completed, :message
+      )
     end
 end
