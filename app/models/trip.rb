@@ -21,6 +21,8 @@
 class Trip < ApplicationRecord
   belongs_to :delivery_route
 
+  has_many :trip_tasks, dependent: :destroy
+
   enum status: {
     scheduled: 0,
     in_transit: 1,
