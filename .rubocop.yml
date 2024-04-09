@@ -1,0 +1,15 @@
+AllCops:
+  Exclude:
+    - "bin/**"
+
+Metrics/BlockLength:
+  Exclude:
+    - "lib/tasks/auto_annotate_models.rake"
+    - "db/**"
+
+Metrics/MethodLength:
+  Exclude:
+    - "db/migrate/**"
+
+Style/Documentation:
+  Enabled: false

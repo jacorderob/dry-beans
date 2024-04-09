@@ -1,0 +1,97 @@
+# == Schema Information
+#
+# Table name: trip_tasks
+#
+#  id                :integer          not null, primary key
+#  address           :string           not null
+#  addressee_name    :string           not null
+#  completed         :boolean          default(FALSE)
+#  completion_time   :datetime
+#  content           :string           not null
+#  estimated_arrival :datetime
+#  kind              :string           not null
+#  message           :text
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  trip_id           :integer          not null
+#
+# Indexes
+#
+#  index_trip_tasks_on_trip_id  (trip_id)
+#
+# Foreign Keys
+#
+#  trip_id  (trip_id => trips.id)
+#
+
+delivery_la_reina1:
+  trip: la_reina1
+  kind: delivery
+  address: "Larraín 4451"
+  addressee_name: "Destinatario Carrasco"
+  completed: false
+  message:
+  content: 'Pelota'
+
+pickup_la_reina1:
+  trip: la_reina1
+  kind: pickup
+  address: "Loreley 1252"
+  addressee_name: "Entregante Soto"
+  completed: true
+  message: "Recibido en buenas condiciones"
+  content: 'Pelota'
+
+delivery_la_reina2:
+  trip: la_reina2
+  kind: delivery
+  address: "Larraín 4451"
+  addressee_name: "Destinatario Carrasco"
+  completed: false
+  message: MyText
+  content: 'Pelota'
+
+pickup_la_reina2:
+  trip: la_reina2
+  kind: pickup
+  address: "Loreley 1252"
+  addressee_name: "Entregante Soto"
+  completed: false
+  message: MyText
+  content: 'Pelota'
+
+delivery_chillan1:
+  trip: chillan1
+  kind: delivery
+  address: "Flores Millán 3312"
+  addressee_name: "Destinatario Carrasco"
+  completed: true
+  message: "Entregado conforme"
+  content: 'Pelota'
+
+pickup_chillan1:
+  trip: chillan1
+  kind: pickup
+  address: "Collín 314"
+  addressee_name: "Entregante Soto"
+  completed: false
+  message: "No se encontró a la persona, se debe reintentar"
+  content: 'Pelota'
+
+delivery_chillan2:
+  trip: chillan2
+  kind: delivery
+  address: "Flores Millán 3312"
+  addressee_name: "Destinatario Carrasco"
+  completed: false
+  message: "Entregado conforme"
+  content: 'Pelota'
+
+pickup_chillan2:
+  trip: chillan2
+  kind: pickup
+  address: "Collín 314"
+  addressee_name: "Entregante Soto"
+  completed: false
+  message: "No se encontró a la persona, se debe reintentar"
+  content: 'Pelota'
