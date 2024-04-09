@@ -14,7 +14,8 @@ class TripTasksControllerTest < ActionDispatch::IntegrationTest
           trip_id: @trip_task.trip_id,
           address: @trip_task.address,
           kind: @trip_task.kind,
-          addressee_name: @trip_task.addressee_name
+          addressee_name: @trip_task.addressee_name,
+          content: @trip_task.content
         }
       }, as: :json
     end

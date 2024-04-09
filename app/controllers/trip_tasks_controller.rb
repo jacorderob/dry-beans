@@ -19,7 +19,7 @@ class TripTasksController < ApplicationController
   def trip_task_params
     params.require(:trip_task).permit(
       :trip_id, :kind, :address, :addressee_name,
-      :completed, :message
+      :completed, :message, :content
     )
   end
 end

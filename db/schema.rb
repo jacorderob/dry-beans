@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 20_240_408_212_903) do
     t.string 'addressee_name', null: false
     t.boolean 'completed', default: false
     t.text 'message'
+    t.string 'content', null: false
     t.datetime 'estimated_arrival'
     t.datetime 'completion_time'
     t.datetime 'created_at', null: false

@@ -9,6 +9,7 @@
 #  addressee_name    :string           not null
 #  completed         :boolean          default(FALSE)
 #  completion_time   :datetime
+#  content           :string           not null
 #  estimated_arrival :datetime
 #  kind              :string           not null
 #  message           :text
@@ -27,6 +28,6 @@
 class TripTask < ApplicationRecord
   belongs_to :trip
 
-  validates :address, :addressee_name, :kind, presence: true
+  validates :address, :addressee_name, :kind, :content, presence: true
   validates :kind, inclusion: { in: %w[delivery pickup] }
 end
