@@ -23,64 +23,64 @@
 #  trip_id  (trip_id => trips.id)
 #
 
-delivery_la_reina_1:
-  trip: la_reina_1
+delivery_la_reina1:
+  trip: la_reina1
   kind: delivery
   address: "Larraín 4451"
   addressee_name: "Destinatario Carrasco"
   completed: false
   message:
 
-pickup_la_reina_1:
-  trip: la_reina_1
+pickup_la_reina1:
+  trip: la_reina1
   kind: pickup
   address: "Loreley 1252"
   addressee_name: "Entregante Soto"
   completed: true
   message: "Recibido en buenas condiciones"
 
-delivery_la_reina_2:
-  trip: la_reina_2
+delivery_la_reina2:
+  trip: la_reina2
   kind: delivery
   address: "Larraín 4451"
   addressee_name: "Destinatario Carrasco"
   completed: false
   message: MyText
 
-pickup_la_reina_2:
-  trip: la_reina_2
+pickup_la_reina2:
+  trip: la_reina2
   kind: pickup
   address: "Loreley 1252"
   addressee_name: "Entregante Soto"
   completed: false
   message: MyText
 
-delivery_chillan_1:
-  trip: chillan_1
+delivery_chillan1:
+  trip: chillan1
   kind: delivery
   address: "Flores Millán 3312"
   addressee_name: "Destinatario Carrasco"
   completed: true
   message: "Entregado conforme"
 
-pickup_chillan_1:
-  trip: chillan_1
+pickup_chillan1:
+  trip: chillan1
   kind: pickup
   address: "Collín 314"
   addressee_name: "Entregante Soto"
   completed: false
   message: "No se encontró a la persona, se debe reintentar"
 
-delivery_chillan_2:
-  trip: chillan_2
+delivery_chillan2:
+  trip: chillan2
   kind: delivery
   address: "Flores Millán 3312"
   addressee_name: "Destinatario Carrasco"
   completed: false
   message: "Entregado conforme"
 
-pickup_chillan_2:
-  trip: chillan_2
+pickup_chillan2:
+  trip: chillan2
   kind: pickup
   address: "Collín 314"
   addressee_name: "Entregante Soto"

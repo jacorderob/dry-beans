@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TripTasksController < ApplicationController
   # POST /trip_tasks.json
   def create
@@ -12,11 +14,12 @@ class TripTasksController < ApplicationController
   end
 
   private
-    # Only allow a list of trusted parameters through.
-    def trip_task_params
-      params.require(:trip_task).permit(
-        :trip_id, :kind, :address, :addressee_name,
-        :completed, :message
-      )
-    end
+
+  # Only allow a list of trusted parameters through.
+  def trip_task_params
+    params.require(:trip_task).permit(
+      :trip_id, :kind, :address, :addressee_name,
+      :completed, :message
+    )
+  end
 end
